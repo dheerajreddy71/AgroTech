@@ -1,0 +1,260 @@
+<!-- /*
+* Template Name: Tour
+* Template Author: Untree.co
+* Tempalte URI: https://untree.co/
+* License: https://creativecommons.org/licenses/by/3.0/
+*/ -->
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="author" content="Untree.co">
+	<link rel="shortcut icon" href="../static/favicon.png">
+
+	<meta name="description" content="" />
+	<meta name="keywords" content="bootstrap, bootstrap4" />
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Source+Serif+Pro:wght@400;700&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" href="../static/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../static/css/owl.carousel.min.css">
+	<link rel="stylesheet" href="../static/css/owl.theme.default.min.css">
+	<link rel="stylesheet" href="../static/css/jquery.fancybox.min.css">
+	<link rel="stylesheet" href="../static/fonts/icomoon/style.css">
+	<link rel="stylesheet" href="../static/fonts/flaticon/font/flaticon.css">
+	<link rel="stylesheet" href="../static/css/daterangepicker.css">
+	<link rel="stylesheet" href="../static/css/aos.css">
+	<link rel="stylesheet" href="../static/css/style.css">
+
+	<title>Agrotech</title>
+	<style>
+		.plant-image {
+        width: 100px;  /* Set your desired width */
+        height: 100px; /* Set your desired height */
+        object-fit: cover;
+    }
+    .plant-name {
+        margin-top: 10px; /* Adjust as necessary */
+    }
+    .row .col-sm-4 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+	.sticky-top {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background-color: #ffffff; /* Adjust as needed */
+        }
+	</style>
+</head>
+
+<body>
+
+
+	<div class="site-mobile-menu site-navbar-target">
+		<div class="site-mobile-menu-header">
+			<div class="site-mobile-menu-close">
+				<span class="icofont-close js-menu-toggle"></span>
+			</div>
+		</div>
+		<div class="site-mobile-menu-body"></div>
+	</div>
+
+	<nav class="site-nav">
+		<div class="container">
+			<div class="site-navigation">
+				<a href="#" class="logo m-0">AgroTech <span class="text-primary">.</span></a>
+
+				<ul class="js-clone-nav d-none d-lg-inline-block text-left site-menu float-right">
+					<li class="active"><a href="">Home</a></li>
+					<li class="has-children">
+						<a href="#">Health Check</a>
+						<ul class="dropdown">
+							<li><a href="../predictor/1/">Wheat</a></li>
+							<li><a href="../predictor/2/">Rice</a></li>
+							<li><a href="../predictor/3/">Cotton</a></li>
+							<li><a href="../predictor/4/">Corn</a></li>
+							<li><a href="../predictor/5/">Sugarcane</a></li>
+							<li><a href="../predictor/6/">Cashew</a></li>
+							<li><a href="../predictor/7/">Cassava</a></li>
+							<li><a href="../predictor/8/">Tomato</a></li>
+							<li><a href="../predictor/9/">Potato</a></li>
+						</ul>
+					</li>
+					<li><a href="crop-recomm/">Crop Recommendation</a></li>
+					<li><a href="care_advisor/">Crop Care Advisor</a></li>
+				</ul>
+
+				<a href="#" class="burger ml-auto float-right site-menu-toggle js-menu-toggle d-inline-block d-lg-none light" data-toggle="collapse" data-target="#main-navbar">
+					<span></span>
+				</a>
+
+			</div>
+		</div>
+	</nav>
+
+
+	<div class="hero">
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-lg-7">
+					<div class="intro-wrap">
+						<h1 class="mb-5"><span class="d-block">Enhance your farming</span>with <span class="typed-words"></span></h1>
+
+						<div class="row">
+							<div class="col-13">
+								<form class="form" method="post">
+									{% csrf_token %}
+									<div class="row mb-2">
+										<div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-3">
+											<input type="text" class="form-control" placeholder="K proporation" name="potassium">
+										</div>
+										<div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-3">
+											<input type="text" class="form-control" placeholder="N proporation" name="nitrogen">
+										</div>
+										<div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-3">
+											<input type="text" class="form-control" placeholder="P proporation" name="phosphorus">
+										</div>
+
+									</div>    
+									<div class="row align-items-center">
+										<div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-4">
+											<input type="submit" class="btn btn-primary btn-block" value="Predict Crop">
+										</div>
+										
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-5">
+					<div class="slides">
+						<img src="https://agridoctor.s3.eu-north-1.amazonaws.com/black-peppercorn-8337820_1280.jpg" alt="Image" class="img-fluid active">
+						<img src="https://agridoctor.s3.eu-north-1.amazonaws.com/crop-7702562_1280.jpg" alt="Image" class="img-fluid">
+						<img src="https://agridoctor.s3.eu-north-1.amazonaws.com/barley-8195287_1280.jpg" alt="Image" class="img-fluid">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="untree_co-section">
+		<div class="container">
+			<div class="row mb-5 justify-content-center">
+				<div class="col-lg-6 text-center">
+					<h2 class="section-title text-center mb-3">Plants Health Check</h2>
+					<div class="row">
+						<div class="col-sm-4">
+							<a href="../predictor/1/">
+								<img src="https://agridoctor.s3.eu-north-1.amazonaws.com/wheat.jpg" alt="Wheat" class="img-fluid plant-image">
+								<p class="plant-name">Wheat</p>
+							</a>
+						</div>
+						<div class="col-sm-4">
+							<a href="../predictor/2/">
+								<img src="https://agridoctor.s3.eu-north-1.amazonaws.com/rice.jpg" alt="Rice" class="img-fluid plant-image">
+								<p class="plant-name">Rice</p>
+							</a>
+						</div>
+						<div class="col-sm-4">
+							<a href="../predictor/3/">
+								<img src="https://agridoctor.s3.eu-north-1.amazonaws.com/cotton+2.jpg" alt="Cotton" class="img-fluid plant-image">
+								<p class="plant-name">Cotton</p>
+							</a>
+						</div>
+						<div class="col-sm-4">
+							<a href="../predictor/4/">
+								<img src="https://agridoctor.s3.eu-north-1.amazonaws.com/corn2.jpg" alt="Corn" class="img-fluid plant-image">
+								<p class="plant-name">Corn</p>
+							</a>
+						</div>
+						<div class="col-sm-4">
+							<a href="../predictor/5/">
+								<img src="https://agridoctor.s3.eu-north-1.amazonaws.com/sugarcane.png" alt="Sugarcane" class="img-fluid plant-image">
+								<p class="plant-name">Sugarcane</p>
+							</a>
+						</div>
+						<div class="col-sm-4">
+							<a href="../predictor/6/">
+								<img src="https://agridoctor.s3.eu-north-1.amazonaws.com/cashew.jpg" alt="Cashew" class="img-fluid plant-image">
+								<p class="plant-name">Cashew</p>
+							</a>
+						</div>
+						<div class="col-sm-4">
+							<a href="../predictor/7/">
+								<img src="https://agridoctor.s3.eu-north-1.amazonaws.com/cassava.jpg" alt="Cassava" class="img-fluid plant-image">
+								<p class="plant-name">Cassava</p>
+							</a>
+						</div>
+						<div class="col-sm-4">
+							<a href="../predictor/8/">
+								<img src="https://agridoctor.s3.eu-north-1.amazonaws.com/toimato.jpg" alt="Tomato" class="img-fluid plant-image">
+								<p class="plant-name">Tomato</p>
+							</a>
+						</div>
+						<div class="col-sm-4">
+							<a href="../predictor/9/">
+								<img src="https://agridoctor.s3.eu-north-1.amazonaws.com/potato.png" alt="Potato" class="img-fluid plant-image">
+								<p class="plant-name">Potato</p>
+							</a>
+						</div>
+					</div>
+				</div>		
+			</div>
+		</div>
+	</div>
+
+
+	
+	<script src="../static/js/jquery-3.4.1.min.js"></script>
+	<script src="../static/js/popper.min.js"></script>
+	<script src="../static/js/bootstrap.min.js"></script>
+	<script src="../static/js/owl.carousel.min.js"></script>
+	<script src="../static/js/jquery.animateNumber.min.js"></script>
+	<script src="../static/js/jquery.waypoints.min.js"></script>
+	<script src="../static/js/jquery.fancybox.min.js"></script>
+	<script src="../static/js/aos.js"></script>
+	<script src="../static/js/moment.min.js"></script>
+	<script src="../static/js/daterangepicker.js"></script>
+
+	<script src="../static/js/typed.js"></script>
+	<script>
+		$(function() {
+			var slides = $('.slides'),
+			images = slides.find('img');
+
+			images.each(function(i) {
+				$(this).attr('data-id', i + 1);
+			})
+
+			var typed = new Typed('.typed-words', {
+				strings: ["Soil Analysis.","Health Check.","Care Advisor."],
+				typeSpeed: 80,
+				backSpeed: 80,
+				backDelay: 4000,
+				startDelay: 1000,
+				loop: true,
+				showCursor: true,
+				preStringTyped: (arrayPos, self) => {
+					arrayPos++;
+					console.log(arrayPos);
+					$('.slides img').removeClass('active');
+					$('.slides img[data-id="'+arrayPos+'"]').addClass('active');
+				}
+
+			});
+		})
+	</script>
+
+	<script src="../static/js/custom.js"></script>
+
+</body>
+
+</html>
