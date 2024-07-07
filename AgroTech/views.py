@@ -3,6 +3,7 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect, HttpResponse
 import requests
+from django.conf import settings
 import joblib
 import numpy as np
 from django.views.decorators.csrf import csrf_exempt
@@ -37,7 +38,7 @@ def predict_crop(request):
         # WeatherAPI.com API endpoint
         url = "http://api.weatherapi.com/v1/current.json"
         # Replace with your API key
-        api_key = "92d97ca8dbc849c1bd292506242806"
+        api_key =settings.weather_api_key
         # Replace with the location you want to get weather for
         location=''
         ip=0
@@ -134,7 +135,7 @@ def care_advisor(request):
             print(e)
             
 
-        genai.configure(api_key="AIzaSyCjwZlJg2vyF0_uC6ZI2XDGTYy5wmNScW4")
+        genai.configure(settings.api_key)
         model = genai.GenerativeModel('gemini-1.5-flash')
         
         response = model.generate_content(f'''Generate a detailed environmental suitability report for the optimal growth of {crop}, including a comparison of current conditions with ideal conditions and recommendations for improvement if needed. Use the following format:
