@@ -77,7 +77,7 @@ def predict_disease(request, plant_id):
                 print("Deleting photo from S3...")
                 s3.delete_object(Bucket=BUCKET_NAME, Key=photo.name)
                 print("Photo deleted successfully.")  # Print success message
-                genai.configure(api_key="AIzaSyCjwZlJg2vyF0_uC6ZI2XDGTYy5wmNScW4")
+                genai.configure(settings.api_key)
                 model = genai.GenerativeModel('gemini-1.5-flash')
                 crop=predictor.plant_name
                 disease=predicted_label
